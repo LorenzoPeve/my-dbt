@@ -1,0 +1,21 @@
+a_simple_profile:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('DBT_DEV_HOST') }}"
+      user: "{{ env_var('DBT_DEV_USER') }}"
+      password: "{{ env_var('DBT_DEV_PASSWORD') }}"
+      port: "{{ env_var('DBT_DEV_PORT') | int }}"
+      dbname: "{{ env_var('DBT_DEV_DBNAME') }}"
+      schema: "{{ env_var('DBT_DEV_SCHEMA') }}"
+      threads: "{{ env_var('DBT_DEV_THREADS') | int }}"
+    prod:
+      type: postgres
+      host: "{{ env_var('DBT_PROD_HOST') }}"
+      user: "{{ env_var('DBT_PROD_USER') }}"
+      password: "{{ env_var('DBT_PROD_PASSWORD') }}"
+      port: "{{ env_var('DBT_PROD_PORT') | int }}"
+      dbname: "{{ env_var('DBT_PROD_DBNAME') }}"
+      schema: "{{ env_var('DBT_PROD_SCHEMA') }}"
+      threads: "{{ env_var('DBT_PROD_THREADS') | int }}"

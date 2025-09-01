@@ -1,0 +1,7 @@
+name: 'my_new_project'
+profile: 'a_simple_profile' # This setting configures which "profile" dbt uses for this project.
+
+models:
+  my_new_project:
+    custom:
+      +schema: marketing

@@ -1,0 +1,7 @@
+target/
+dbt_packages/
+logs/
+
+.dbt/dbt_cloud.yml
+.dbt/user.yml
+venv/
