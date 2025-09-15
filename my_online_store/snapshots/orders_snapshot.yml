@@ -1,0 +1,17 @@
+snapshots:
+  - name: orders_snapshot_timebased
+    relation: source('online_store', 'orders')
+    config:
+      schema: 'snapshots' # this is a custom schema so it will be `target.schema` + '_snapshots'
+      database: "{{ target.database }}"
+      unique_key: order_id
+      strategy: timestamp
+      updated_at: updated_at
+  - name: orders_snapshot_cols_check
+    relation: source('online_store', 'orders')
+    config:
+      schema: 'snapshots' # this is a custom schema so it will be `target.schema` + '_snapshots'
+      database: "{{ target.database }}"
+      unique_key: order_id
+      strategy: check
+      check_cols: [order_id, username, order_status]
