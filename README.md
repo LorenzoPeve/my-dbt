@@ -1,5 +1,8 @@
 # dbt Snapshots
 
+## Docs
+- [Add snapshots to your DAG](https://docs.getdbt.com/docs/build/snapshots)
+
 ## Setting up the Python Environment
 
 ```bash

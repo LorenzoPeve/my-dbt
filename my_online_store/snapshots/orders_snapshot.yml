@@ -15,3 +15,4 @@ snapshots:
       unique_key: order_id
       strategy: check
       check_cols: [order_id, username, order_status]
+      hard_deletes: new_record
