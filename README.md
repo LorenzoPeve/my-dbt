@@ -1,4 +1,4 @@
-# dbt Snapshots
+# dbt Ephemeral Models
 
 ## Docs
 - [Add snapshots to your DAG](https://docs.getdbt.com/docs/build/snapshots)
@@ -60,39 +60,4 @@ VALUES
     (1003, 'charlie','cancelled', 503, '2025-09-12',  35.50, CURRENT_TIMESTAMP AT TIME ZONE 'CST'),
     (1004, 'alice',  'delivered', 504, '2025-09-12',  89.95, CURRENT_TIMESTAMP AT TIME ZONE 'CST'),
     (1005, 'diana',  'pending',   505, '2025-09-13',  42.75, CURRENT_TIMESTAMP AT TIME ZONE 'CST');
-```
-
-### Modifying the schema
-```sql
--- Remove the total_amount column
-ALTER TABLE dev.orders
-DROP COLUMN total_amount;
-
--- Add a new column for item_category
-ALTER TABLE dev.orders
-ADD COLUMN item_category VARCHAR(50);
-```
-
-### Simulating changes to existing data
-#### Timebased snapshot
-```
-UPDATE dev.orders
-SET
-    item_category = 'footwear',
-    updated_at = TIMESTAMP '2026-12-31 09:00'
-WHERE order_id = 1005;
-```
-#### Check-based snapshot
-```sql
-UPDATE dev.orders
-SET
-    order_status = 'delivered'
-WHERE order_id = 1005;
-```
-
-### Inserting new data to simulate changes
-```sql
-INSERT INTO dev.orders (order_id, username, order_status, order_item_id, order_date, updated_at)
-VALUES
-    (1006, 'carlos',  'delivered',   44, '2025-09-10', CURRENT_TIMESTAMP AT TIME ZONE 'CST');
 ```
