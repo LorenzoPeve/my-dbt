@@ -1,3 +1,4 @@
+.dbt/
 logs/
 
 # dbt specific
