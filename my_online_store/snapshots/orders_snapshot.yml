@@ -16,3 +16,12 @@ snapshots:
       strategy: check
       check_cols: [order_id, username, order_status]
       hard_deletes: new_record
+  - name: orders_snapshot_cols_check_all
+    relation: source('online_store', 'orders')
+    config:
+      schema: 'snapshots' # this is a custom schema so it will be `target.schema` + '_snapshots'
+      database: "{{ target.database }}"
+      unique_key: order_id
+      strategy: check
+      check_cols: all
+      hard_deletes: new_record
