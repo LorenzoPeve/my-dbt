@@ -1,0 +1,36 @@
+logs/
+
+# dbt specific
+my_online_store/target/
+my_online_store/dbt_packages/
+my_online_store/dbt_modules/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+
+# Documentation
+site/
+
+# Compiled files
+*.pyc
