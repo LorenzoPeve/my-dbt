@@ -1,4 +1,4 @@
-.dbt/
+.dbt/.user.yml
 logs/
 
 # dbt specific
