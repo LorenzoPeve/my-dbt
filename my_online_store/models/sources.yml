@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: online_store
+    database: "{{ target.database }}"
+    schema: "{{ target.schema }}"
+    tables:
+      - name: orders
