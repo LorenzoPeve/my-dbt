@@ -1,10 +1,9 @@
-name: 'my_online_store'
-profile: 'a_simple_profile'
+version: 2
 
 seeds:
-  my_online_store:
-    raw_orders:
-      +column_types:
+  - name: raw_orders
+    config:
+      column_types:
         order_id: INT64
         customer_id: INT64
         order_date: DATE

@@ -10,3 +10,10 @@ a_simple_profile:
       dbname: postgres
       schema: dev
       threads: 4
+    bigquery:
+      type: bigquery
+      method: oauth
+      project: tecovas-dev-edw
+      dataset: lorenzo_incremental
+      threads: 4
+      location: US
